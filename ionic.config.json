@@ -1,5 +1,7 @@
 {
   "name": "Rana",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

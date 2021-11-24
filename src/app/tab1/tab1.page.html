@@ -1,17 +1,45 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div *ngIf="!activityList">
+    <ion-card>
+      <ion-skeleton-text class="skeleton-image" animated></ion-skeleton-text>
+      <ion-card-header>
+        <ion-skeleton-text animated></ion-skeleton-text>
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-card-header>
+    </ion-card>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-card>
+      <ion-skeleton-text class="skeleton-image" animated></ion-skeleton-text>
+      <ion-card-header>
+        <ion-skeleton-text animated></ion-skeleton-text>
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card>
+      <ion-skeleton-text class="skeleton-image" animated></ion-skeleton-text>
+      <ion-card-header>
+        <ion-skeleton-text animated></ion-skeleton-text>
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-card-header>
+    </ion-card>
+  </div>
+  
+  
+  <ion-skeleton-text animated></ion-skeleton-text>
+  <ion-card [routerLink]="['activity-detail', activity.id]" 
+  *ngFor="let activity of (activityList | async)">
+    <ion-img [src]="activity.cropped"></ion-img>
+    <ion-card-header>
+      <ioc-card-title>{{activity.name}}</ioc-card-title>
+    </ion-card-header>
+  </ion-card>
 </ion-content>

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ActivityService } from '../activity.service';
+import { Activity } from '../types';
 
 @Component({
   selector: 'app-tab1',
@@ -6,7 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  activityList: Observable<Activity[]>;
 
-  constructor() {}
+  constructor(activityService: ActivityService) {
+    setTimeout(() => {
+      this.activityList = activityService.getAllActivities();
+    }, 3000);
+    this.activityList = activityService.getAllActivities();
+  }
 
 }
