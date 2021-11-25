@@ -1,3 +1,3 @@
 # Ionic_App
 
-Use ayush@a.com and Ayush@123 to login.
+Use username `ayush@a.com` and `Ayush@123` to login.
