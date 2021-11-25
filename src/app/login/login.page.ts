@@ -31,9 +31,6 @@ export class LoginPage implements OnInit {
     console.log('asfa')
 
     const loginCredential: LoginCredential = this.loginFormGroup.value;
-    this._router.navigate(["/tabs"]);
-    console.log('asfa')
-
     this._loginService.login(loginCredential)
       .then((authData)=> {
         this._router.navigate(["/tabs"]);
